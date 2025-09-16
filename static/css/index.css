@@ -1,3 +1,17 @@
+.concept-caption {
+  margin-bottom: 0.1em;
+  margin-top: 0.1em;
+}
+
+img[alt="Concept Overview"] {
+  margin-top: 0.1em;
+  margin-bottom: 0.1em;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 body {
   font-family: 'Noto Sans', sans-serif;
 }
@@ -18,9 +32,16 @@ body {
 }
 
 
-.teaser .hero-body {
-  padding-top: 0;
-  padding-bottom: 3rem;
+
+.teaser-video-section {
+  margin-bottom: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.teaser-video-section .hero-body {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .teaser {

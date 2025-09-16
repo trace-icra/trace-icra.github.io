@@ -53,10 +53,11 @@
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <h1 class="title is-1 publication-title">TRACE: Interactive Bi-Directional Cable Tracing Amid Clutter</h1>
+            <h2 class="subtitle is-3" style="margin-top:0.5em;">Two-way Routing and Cable Estimation</h2>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
-              <!-- <span class="author-block"> -->
-                <!-- Justin Yu<sup>*1</sup></span>, -->
+              <span class="author-block">
+                Anonymous Authors</span>
               <!-- <span class="author-block"> -->
                 <!-- Nidhya Shivakumar<sup>*1</sup></span>, -->
               <!-- <span class="author-block"> -->
@@ -79,9 +80,9 @@
 
                   <div class="column has-text-centered">
                     <div class="publication-links">
-                         <!-- Arxiv PDF link -->
+                         <!-- Built-in PDF link -->
                       <span class="link-block">
-                        <a href = https://drive.google.com/file/d/1S_aFpQG6vTDbSJbp0SfvAKrMbae1yH-J/view?usp=sharing target="_blank"
+                        <a href="pdf/ICRA_2026_Cable_Untangling_final_submitted.pdf" target="_blank"
                         class="external-link button is-normal is-rounded is-dark">
                         <span class="icon">
                           <i class="fas fa-file-pdf"></i>
@@ -119,12 +120,12 @@
 </section> -->
 
 <!-- Teaser video -->
-<section class="section hero is-light">
-  <div class="container is-max-desktop" style="margin-top: -5em; margin-bottom:-8em">
+<section class="section hero is-light teaser-video-section">
+  <div class="container is-max-desktop">
     <div class="hero-body">
       <video poster="" id="tree" autoplay controls muted loop height="100%">
         <!-- Your video here -->
-        <source src="static/videos/icra_vid_submission_website.mp4"
+        <source src="static/videos/icra_vid_submission_final_website.mp4"
         type="video/mp4">
       </video>
       <!-- <h2 class="subtitle has-text-centered">
@@ -136,7 +137,7 @@
 <!-- End teaser video -->
 
 <!-- Paper abstract -->
-<section class="section hero is-light">
+<!-- <section class="section hero is-dark">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -161,31 +162,33 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 <!-- End paper abstract -->
 
-<section class="section hero is-light">
+<section class="section hero is-dark">
+
   <div class="container is-max-desktop" style="margin-top: -2em; margin-bottom:-1em">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h5 class="title is-4">TRACE Concept Overview</h5>
+        <h5 class="title is-3">TRACE Concept Overview</h5>
       </div>
     </div>
     <img src="static/images/concept.png" alt="Concept Overview">
+    <div class="concept-caption" style="text-align:center; margin-top:0.5em; font-size:1.1em; color:#d3d3d3;">TRACE receives an overhead image as input (top right). By running a cable state estimator from each endpoint, TRACE identifies points of ambiguity, or divergence points, which are then disambiguated by targeted interactive perception primitives (bottom left and middle).</div>
   </div>
 </section>
 
 <section class="section hero is-light">
-  <div class="container is-max-desktop" style="margin-top: -2em; margin-bottom:-1em">
+  <div class="container is-max-desktop" style="margin-top: -2em; margin-bottom:0em">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h5 class="title is-4">TRACE Framework</h5>
+        <h5 class="title is-3">TRACE Framework</h5>
       </div>
     </div>
     <img src="static/images/sketch.png" alt="TRACE Framework">
+    <div class="concept-caption" style="text-align:center; margin-top:0.5em; font-size:1.1em; color:#4c4c4c;">TRACE runs the cable state estimator bi-directionally, identifies divergence points, and disambiguates with interactive perception primitives continuously until the cables are successfully traced.</div>
   </div>
 </section>
-
 
 <!-- End teaser video -->
 
@@ -330,8 +333,6 @@
   </div>
 </section> -->
 <!-- End video carousel -->
-
-
 <!--BibTex citation -->
   <!-- <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
@@ -348,9 +349,70 @@
     </div>
 </section> -->
 <!--End BibTex citation -->
+<!-- Divergence Point Detection Section -->
+
+<section class="section hero is-dark">
+  <div class="container is-max-desktop" style="margin-top: -2em; margin-bottom:-2em">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h5 class="title is-3">Divergence Point Detection</h5>
+      </div>
+    </div>
+      <div style="display: flex; justify-content: center; align-items: center;">
+        <img src="static/images/initial_trace.png" alt="Divergence Point Detection" style="max-width:630px; width:100%; height:auto;" />
+      </div>
+    <div class="concept-caption" style="text-align:center; margin-top:0.5em; font-size:1.1em; color:#d3d3d3;">TRACE first initiates traces from each endpoint, resulting in two separate traces per cable.</div>
+    <div style="display: flex; justify-content: center; align-items: center;">
+      <img src="static/images/div_logic.png" alt="Divergence Point Detection" style="max-width:100%; height:auto;" />
+    </div>
+    <div class="concept-caption" style="text-align:center; margin-top:0.5em; font-size:1.1em; color:#d3d3d3;">Candidate trace pairs, or the forward and backward traces of a single cable, are determined by matching traces with high overlap. Points where the cables no longer overlap are marked as divergence points—locations where interactive perception primitives will be applied.</div>
+  </div>
+</section>
+<!-- Interactive Perception Moves Section -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop" style="margin-top: -2em; margin-bottom:-2em">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h5 class="title is-3">Interactive Perception (IP) Moves</h5>
+      </div>
+    </div>
+  <div style="display: flex; justify-content: center; align-items: center; gap: 2em; min-height: 200px; margin-bottom: 1em;">
+      <img src="static/images/push.png" alt="IP Move 1" style="width: 40%; height: auto; border-radius: 8px;" />
+      <img src="static/images/cluster.png" alt="IP Move 2" style="width: 40%; height: auto; border-radius: 8px;" />
+    </div>
+    <div class="concept-caption" style="text-align:center; margin-top:0.5em; font-size:1.1em; color:#555;">Interactive perception primitives are selected based on the cable density in a local region at the divergence point. TRACE applies a Divergence Push in regions with low density and a Cluster Dilation in highly dense regions.</div>
+  </div>
+</section>
+  
+<!-- Results Section -->
+<section class="section hero is-dark">
+  <div class="container is-max-desktop" style="margin-top: -2em; margin-bottom:-2em">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h5 class="title is-3">Results</h5>
+      </div>
+    </div>
+    <div class="results-figure-block" style="margin-bottom:2em;">
+        <div class="concept-caption" style="text-align:center; margin-top:0.5em; font-size:1.1em; color:#d3d3d3;">We baseline TRACE against HANDLOOM 2.0 from MANIP in 110 physical experiments. TRACE consistently outperforms HANDLOOM 2.0 in scenarios with foreground clutter and without foreground clutter across all tiers of difficulty.</div>
+        <div style="height:0.5em;"></div>
+        <div style="display: flex; justify-content: center; align-items: center;">
+          <img src="static/images/manip.png" alt="Results Figure 1" style="max-width:700px; width:100%; height:auto; border-radius:8px;" />
+        </div>
+    </div>
+    <div class="results-figure-block" style="margin-bottom:2em;">
+      <div class="concept-caption" style="text-align:center; margin-top:0.5em; font-size:1.1em; color:#d3d3d3;">We also baseline TRACE against RT-DLO on small image crops, since RT-DLO only traces small portions of full images. To isolate TRACE’s interactive perception primitives, we compare the trace accuracy on the initial and final image of each trial. While RT-DLO’s performance increases after TRACE’s interactive primitives, TRACE achieves higher accuracy.</div>
+      <div style="height:0.5em;"></div>
+      <div style="display: flex; justify-content: center; align-items: center;">
+        <img src="static/images/rt-dlo.png" alt="Results Figure 2" style="max-width:500px; width:100%; height:auto; border-radius:8px;" />
+      </div>
+    </div>
+  </div>
+</section>
 
 
-  <footer class="footer">
+
+
+<footer class="footer">
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-8">
@@ -358,7 +420,7 @@
 
           <p>
             This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
             Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
 
